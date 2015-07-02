@@ -7,12 +7,8 @@ class Multiples
   end
 
   def collect_multiples
-    self.num -= 1
-    if num % 5 == 0 || num % 3 == 0
-      num == 0 ? [] : Multiples.new(num).collect_multiples << num
-    else
-      Multiples.new(num).collect_multiples
-    end        
+    self.num -= 1      
+    (num % 5 == 0 || num % 3 == 0) ? (num == 0 ? [] : Multiples.new(num).collect_multiples << num) : Multiples.new(num).collect_multiples
   end
 
   def sum_multiples
