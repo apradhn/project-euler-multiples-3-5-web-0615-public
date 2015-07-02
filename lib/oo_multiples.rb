@@ -8,16 +8,14 @@ class Multiples
 
   def collect_multiples
     self.num -= 1
-    if num == 0
-      []
-    elsif num % 5 == 0 || num % 3 == 0
-      Multiples.new(num).collect_multiples << num
+    if num % 5 == 0 || num % 3 == 0
+      num == 0 ? [] : Multiples.new(num).collect_multiples << num
     else
       Multiples.new(num).collect_multiples
-    end    
+    end        
   end
 
   def sum_multiples
-    self.collect_multiples.inject(0){|sum, m| sum + m}
+    collect_multiples.inject(0){|sum, m| sum + m}
   end
 end
