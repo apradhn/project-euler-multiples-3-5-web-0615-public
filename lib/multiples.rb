@@ -4,7 +4,7 @@ def collect_multiples(num)
     []
   elsif num % 5 == 0 || num % 3 == 0
     collect_multiples(num) << num
-  else num > 0
+  else
     collect_multiples(num)
   end
 end
