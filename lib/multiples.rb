@@ -1,13 +1,11 @@
 def collect_multiples(num)
   num -= 1
-  if num % 5 == 0 && num != 0
-    collect_multiples(num) << num
-  elsif num % 3 == 0 && num != 0
-    collect_multiples(num) << num
-  elsif num > 0
-    collect_multiples(num)
-  else
+  if num == 0
     []
+  elsif num % 5 == 0 || num % 3 == 0
+    collect_multiples(num) << num
+  else num > 0
+    collect_multiples(num)
   end
 end
 

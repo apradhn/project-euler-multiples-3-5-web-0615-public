@@ -8,14 +8,12 @@ class Multiples
 
   def collect_multiples
     self.num -= 1
-    if self.num % 5 == 0 && self.num != 0
-      Multiples.new(num).collect_multiples << self.num
-    elsif self.num % 3 == 0 && self.num != 0
-      Multiples.new(num).collect_multiples << self.num
-    elsif self.num > 0
-      Multiples.new(num).collect_multiples
-    elsif self.num == 0
+    if self.num == 0
       []
+    elsif self.num % 5 == 0 || self.num % 3 == 0
+      Multiples.new(num).collect_multiples << self.num
+    else
+      Multiples.new(num).collect_multiples
     end    
   end
 
